@@ -39,16 +39,16 @@ sentiment-analysis-nlp/
 
 **Classical pipeline** (`01_classical_nlp_pipeline.ipynb`)
 
-1. Data ingestion — Cornell Movie Review Dataset (pos/neg folders)
-2. Preprocessing — NLTK tokenisation, stopword removal, stemming / lemmatisation
-3. Feature extraction — Trigrams (freq-norm), Bigrams (TF-IDF), Unigrams (TF-IDF), Bigrams (PPMI)
-4. Naïve Bayes from scratch (Laplace smoothing, log-space)
-5. sklearn benchmarks — MultinomialNB, Logistic Regression, LinearSVC
+1. Data ingestion - Cornell Movie Review Dataset (pos/neg folders)
+2. Preprocessing - NLTK tokenisation, stopword removal, stemming / lemmatisation
+3. Feature extraction - Trigrams (freq-norm), Bigrams (TF-IDF), Unigrams (TF-IDF), Bigrams (PPMI)
+4. Naïve Bayes - from scratch (Laplace smoothing, log-space)
+5. sklearn benchmarks - MultinomialNB, Logistic Regression, LinearSVC
 6. Hyperparameter tuning
 
 **BERT pipeline** (`02_bert_finetuning.ipynb`)
 
-- Fine-tunes `bert-base-cased` and `bert-base-uncased` using HuggingFace `Trainer`
+- Fine-tunes - `bert-base-cased` and `bert-base-uncased` using HuggingFace `Trainer`
 - See `requirements.txt` for dependencies
 
 ---
@@ -111,4 +111,4 @@ BERT fine-tuning requires a GPU and the optional dependencies listed in `require
 pip install wandb
 ```
 
-Then call `from src.evaluate import log_to_wandb` in any notebook — see `01_classical_nlp_pipeline.ipynb` for a usage example.
+Then call `from src.evaluate import log_to_wandb` in any notebook, see `01_classical_nlp_pipeline.ipynb` for a usage example.
