@@ -71,11 +71,11 @@ sentiment-analysis-nlp/
 - **Feature representation matters far more than classifier choice.** Swapping the feature set moves F1 by up to 17 points (trigrams → unigrams); swapping classifiers on the same features moves it by under 2 points. Engineering better inputs is the highest-leverage decision in classical NLP.
 - **All classical models hit a hard ceiling at ~0.85 F1.** Not a classifier limitation but rather it is a representation limitation. Bag-of-words discards word order entirely, so negation (*"not good"*), intensifiers, and sarcasm are invisible to every classical model regardless of how sophisticated it is.
 - **BERT breaks the ceiling by 6 points (0.91 F1) through contextual embeddings.** Bidirectional attention captures what bag-of-words cannot: how the meaning of a word depends on the words around it. Notably, BERT Uncased outperforms Cased; for sentiment tasks, capitalisation adds vocabulary noise without proportional benefit.
-- **Aside:** The best result here (0.91 F1 with BERT Uncased) is a reasonable score for fine-tuning a general-purpose pretrained transformer on a small, balanced dataset. However, for some context, human annotators agree on the Cornell Movie Review Dataset at approximately 0.97 F1 [Pang et al., 2002](https://aclanthology.org/W02-1011/). This 6-point gap highlights a class of examples that binary classification struggles with:
-         * Irony and sarcasm - where no individual sentence is negative, but the cumulative tone is
-         * Mixed-sentiment reviews - e.g. where the acting is praised and the plot is criticised, and a single binary label tries to flattens an ambivalent response
-         * Negation or inversion - e.g. "impressively bad casting" uses positive vocabulary to convey negative sentiment in a way that requires world knowledge to decode (i.e. a human level knowledge of linguistics)
-         * From this, it looks like a simple binary positive/negative classification misses nuance and is an incomplete model of how humans can experience sentiment.
+- **Aside:** The best result here (0.91 F1 with BERT Uncased) is a reasonable score for fine-tuning a general-purpose pretrained transformer on a small, balanced dataset. However, for some context, human annotators agree on the Cornell Movie Review Dataset at approximately 0.97 F1 ([Pang et al., 2002](https://aclanthology.org/W02-1011/)). This 6-point gap highlights a class of examples that binary classification struggles with:
+* Irony and sarcasm - where no individual sentence is negative, but the cumulative tone is
+* Mixed-sentiment reviews - e.g. where the acting is praised and the plot is criticised, and a single binary label tries to flattens an ambivalent response
+* Negation or inversion - e.g. "impressively bad casting" uses positive vocabulary to convey negative sentiment in a way that requires world knowledge to decode (i.e. a human level knowledge of linguistics)
+* From this, it looks like a simple binary positive/negative classification misses nuance and is an incomplete model of how humans can experience sentiment.
 
 ### Visualisations
 
